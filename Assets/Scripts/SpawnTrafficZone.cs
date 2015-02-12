@@ -39,7 +39,7 @@ public class SpawnTrafficZone : MonoBehaviour {
 				                                     Random.Range(areaBounds.min.z, areaBounds.max.z));
 				
 				// determine the speed of the new car
-				float newCarVelocity = Random.Range(10, 25);
+				float newCarVelocity = Random.Range(10, 15);
 				
 				// TO DO: also make sure the newly instantiated car doesn't overlap any recently instantiated ones
 				

@@ -22,17 +22,17 @@ public class SimpleFlyingCar : MonoBehaviour
 	void Start () 
 	{
 		// Store the starting position so we can relocate here after the car has reached a certain point.
-		startingPos = rigidbody.position;
+		startingPos = transform.position; //rigidbody.position;
 		
 		// Set the linear velocity on the forward vector (dynamic only)
-		rigidbody.velocity = rigidbody.transform.forward * TopVelocity;
+		//rigidbody.velocity = rigidbody.transform.forward * TopVelocity;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		// use this if kinematic rigid body
-		//rigidbody.transform.Translate (rigidbody.transform.forward * TopVelocity * Time.deltaTime);
+		rigidbody.transform.Translate (rigidbody.transform.forward * TopVelocity * Time.deltaTime);
 		
 		// Check if the distance from the starting point has exceeded a certain amount
 		if (Vector3.Distance (startingPos, rigidbody.transform.position) > 100.0f) 
