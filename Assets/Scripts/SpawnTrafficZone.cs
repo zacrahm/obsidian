@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* TO DO:
+ * 
+ * Want to vary spawn zone density and how fast the cars move and their variance from that average speed so some streets will be easier or harder to travel on.
+ * 
+ * Each car casts a ray on its forward vector to see if it's about to collide with something then comes to a stop then starts again when clear. May have to do some 
+ * fancier calculations to make it more realistic.
+ * 
+ */
+
+
 /// <summary>
 /// This script will spawn car prefabs anywhere inside the renderable mesh ("zone") and set their velocities randomly in the direction of the forward vector of the zone.
 /// </summary>
@@ -48,7 +58,7 @@ public class SpawnTrafficZone : MonoBehaviour {
 				newCar.GetComponent<SimpleFlyingCar>().TopVelocity = newCarVelocity;
 			}
 			
-			nextCarTimer = 0.5f; //Random.Range(0.5f, 1.0f);
+			nextCarTimer = 0.175f; //Random.Range(0.5f, 1.0f);
 		}
 	}
 }
